@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMPIRE PROPERTY SHOWROOM - Dubai Real Estate</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>🏢 EMPIRE PROPERTY SHOWROOM</h1>
+                <p>Dubai Real Estate Solutions</p>
+            </div>
+            <nav class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#properties">Properties</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>Find Your Dream Property in Dubai</h2>
+            <p>Buy, Sell, Rent, or Invest in Off-Plan Projects</p>
+            <div class="cta-buttons">
+                <button class="btn btn-primary" onclick="document.getElementById('properties').scrollIntoView({behavior: 'smooth'})">View Properties</button>
+                <button class="btn btn-secondary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Contact Us</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search & Filter Section -->
+    <section class="search-section">
+        <div class="container">
+            <h3>Search Properties</h3>
+            <div class="search-filters">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search by location, name...">
+                
+                <select id="typeFilter" class="filter-select">
+                    <option value="">All Property Types</option>
+                    <option value="apartment">Apartment</option>
+                    <option value="villa">Villa</option>
+                    <option value="townhouse">Townhouse</option>
+                    <option value="studio">Studio</option>
+                </select>
+
+                <select id="categoryFilter" class="filter-select">
+                    <option value="">All Categories</option>
+                    <option value="buy">Buy</option>
+                    <option value="rent">Rent</option>
+                    <option value="offplan">Off-Plan</option>
+                    <option value="sell">Sell</option>
+                </select>
+
+                <button class="btn btn-search" onclick="filterProperties()">Search</button>
+                <button class="btn btn-reset" onclick="resetFilters()">Reset</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Properties Grid -->
+    <section id="properties" class="properties-section">
+        <div class="container">
+            <h2>Our Properties</h2>
+            <div id="propertiesGrid" class="properties-grid">
+                <!-- Properties will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Property Detail Modal -->
+    <div id="propertyModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modalBody">
+                <!-- Property details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2>About EMPIRE PROPERTY SHOWROOM</h2>
+            <p>We are Dubai's premier real estate platform, specializing in buying, selling, renting, and off-plan investment properties. With years of experience and a dedicated team, we help you find the perfect property in Dubai's most sought-after locations.</p>
+            <div class="features">
+                <div class="feature">
+                    <h4>🎯 Expert Team</h4>
+                    <p>Experienced professionals ready to assist you</p>
+                </div>
+                <div class="feature">
+                    <h4>💰 Best Deals</h4>
+                    <p>Competitive pricing and exclusive offers</p>
+                </div>
+                <div class="feature">
+                    <h4>📍 Prime Locations</h4>
+                    <p>Properties in Dubai's best neighborhoods</p>
+                </div>
+                <div class="feature">
+                    <h4>⚡ Fast Service</h4>
+                    <p>Quick response and efficient transactions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Contact Details</h3>
+                    <p><strong>📱 Phone:</strong> <a href="tel:+971543225393">+971 54 322 5393</a></p>
+                    <p><strong>📧 Email:</strong> <a href="mailto:info@empireproperty.ae">info@empireproperty.ae</a></p>
+                    <p><strong>📍 Location:</strong> Dubai, UAE</p>
+                    <p><strong>🕐 Hours:</strong> Monday - Friday: 9:00 AM - 6:00 PM | Saturday: 10:00 AM - 4:00 PM</p>
+                </div>
+                <form class="contact-form" onsubmit="handleContactSubmit(event)">
+                    <h3>Send us a Message</h3>
+                    <input type="text" id="name" placeholder="Your Name" required>
+                    <input type="email" id="email" placeholder="Your Email" required>
+                    <input type="tel" id="phone" placeholder="Your Phone Number" required>
+                    <select id="interest" required>
+                        <option value="">I'm interested in...</option>
+                        <option value="buy">Buying a Property</option>
+                        <option value="sell">Selling a Property</option>
+                        <option value="rent">Renting a Property</option>
+                        <option value="offplan">Off-Plan Investment</option>
+                    </select>
+                    <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 EMPIRE PROPERTY SHOWROOM. All rights reserved. | Dubai Real Estate Excellence</p>
+            <p>Contact: +971 54 322 5393 | Secure your dream property today!</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
