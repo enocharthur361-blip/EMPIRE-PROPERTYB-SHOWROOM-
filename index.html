@@ -16,6 +16,7 @@
             </div>
             <nav class="nav-links">
                 <a href="#home">Home</a>
+                <a href="#featured">Featured</a>
                 <a href="#properties">Properties</a>
                 <a href="#about">About</a>
                 <a href="#contact">Contact</a>
@@ -25,12 +26,70 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <div class="hero-overlay"></div>
         <div class="hero-content">
             <h2>Find Your Dream Property in Dubai</h2>
             <p>Buy, Sell, Rent, or Invest in Off-Plan Projects</p>
             <div class="cta-buttons">
-                <button class="btn btn-primary" onclick="document.getElementById('properties').scrollIntoView({behavior: 'smooth'})">View Properties</button>
+                <button class="btn btn-primary" onclick="document.getElementById('featured').scrollIntoView({behavior: 'smooth'})">View Properties</button>
                 <button class="btn btn-secondary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Contact Us</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Luxury Properties Showcase -->
+    <section id="featured" class="featured-properties">
+        <div class="container">
+            <h2>✨ Featured Luxury Properties</h2>
+            <p class="featured-subtitle">Discover our handpicked selection of premium properties with iconic Dubai landmarks and luxurious amenities</p>
+            <div class="showcase-grid">
+                <div class="property-showcase" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80');">
+                    <div class="showcase-overlay">
+                        <h3>Downtown Dubai Villa</h3>
+                        <div class="showcase-price">AED 5,500,000</div>
+                        <div class="showcase-location">📍 Downtown Dubai, UAE</div>
+                    </div>
+                </div>
+
+                <div class="property-showcase" style="background-image: url('https://images.unsplash.com/photo-1512917774080-9900861a2538?w=600&q=80');">
+                    <div class="showcase-overlay">
+                        <h3>Burj Khalifa View Apartment</h3>
+                        <div class="showcase-price">AED 3,200,000</div>
+                        <div class="showcase-location">📍 Downtown, Dubai</div>
+                    </div>
+                </div>
+
+                <div class="property-showcase" style="background-image: url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=600&q=80');">
+                    <div class="showcase-overlay">
+                        <h3>Palm Jumeirah Waterfront</h3>
+                        <div class="showcase-price">AED 8,900,000</div>
+                        <div class="showcase-location">📍 Palm Jumeirah, Dubai</div>
+                    </div>
+                </div>
+
+                <div class="property-showcase" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80');">
+                    <div class="showcase-overlay">
+                        <h3>Marina Waterfront Penthouse</h3>
+                        <div class="showcase-price">AED 7,500,000</div>
+                        <div class="showcase-location">📍 Dubai Marina, UAE</div>
+                    </div>
+                </div>
+
+                <div class="property-showcase" style="background-image: url('https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=600&q=80');">
+                    <div class="showcase-overlay">
+                        <h3>Emirates Hills Mansion</h3>
+                        <div class="showcase-price">AED 12,000,000</div>
+                        <div class="showcase-location">📍 Emirates Hills, Dubai</div>
+                    </div>
+                </div>
+
+                <div class="property-showcase" style="background-image: url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=600&q=80');">
+                    <div class="showcase-overlay">
+                        <h3>Jumeirah Beach Villa</h3>
+                        <div class="showcase-price">AED 6,800,000</div>
+                        <div class="showcase-location">📍 Jumeirah Beach, Dubai</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -88,7 +147,7 @@
     <section id="about" class="about-section">
         <div class="container">
             <h2>About EMPIRE PROPERTY SHOWROOM</h2>
-            <p>We are Dubai's premier real estate platform, specializing in buying, selling, renting, and off-plan investment properties. With years of experience and a dedicated team, we help you find the perfect property in Dubai's most sought-after locations.</p>
+            <p>We are Dubai's premier real estate platform, specializing in buying, selling, renting, and off-plan investment properties. With years of experience and a dedicated team, we help you find the perfect property in Dubai's most desirable locations.</p>
             <div class="features">
                 <div class="feature">
                     <h4>🎯 Expert Team</h4>
