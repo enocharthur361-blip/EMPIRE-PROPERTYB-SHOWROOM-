@@ -1,0 +1,582 @@
+/* ============================================
+   EMPIRE Property Showroom - Webinar Styles
+   Live Conference Integration CSS
+   ============================================ */
+
+:root {
+    --primary-color: #1e40af;
+    --secondary-color: #f97316;
+    --success-color: #22c55e;
+    --warning-color: #eab308;
+    --error-color: #ef4444;
+    --dark-bg: #0f172a;
+    --light-bg: #f8fafc;
+    --border-color: #e2e8f0;
+    --text-color: #1e293b;
+    --text-light: #64748b;
+}
+
+/* ============================================
+   WEBINAR CONTAINER & LAYOUT
+   ============================================ */
+
+.webinar-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.webinar-header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #1e3a8a 100%);
+    color: white;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.status {
+    margin: 0;
+    font-size: 14px;
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+#statusText {
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.status-success {
+    color: var(--success-color);
+}
+
+.status-error {
+    color: var(--error-color);
+}
+
+.status-warning {
+    color: var(--warning-color);
+}
+
+.status-info {
+    color: #3b82f6;
+}
+
+.back-btn {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: translateX(-2px);
+}
+
+/* ============================================
+   WEBINAR MAIN CONTENT
+   ============================================ */
+
+.webinar-main {
+    flex: 1;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.webinar-content {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 20px;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ============================================
+   ZOOM VIDEO CONTAINER
+   ============================================ */
+
+.zoom-container {
+    padding: 20px;
+    background: #000;
+    border-radius: 8px;
+}
+
+.zoom-video {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+    overflow: hidden;
+    position: relative;
+}
+
+.zoom-video .placeholder {
+    text-align: center;
+    opacity: 0.6;
+}
+
+.zoom-video .placeholder h2 {
+    margin: 0 0 10px 0;
+}
+
+.zoom-video .placeholder p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* ============================================
+   WEBINAR INFO PANEL
+   ============================================ */
+
+.webinar-info-panel {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-left: 1px solid var(--border-color);
+    overflow-y: auto;
+    max-height: 600px;
+}
+
+.info-section {
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.info-section h3 {
+    margin: 0 0 12px 0;
+    font-size: 16px;
+    color: var(--primary-color);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.session-details,
+.property-details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.session-details p,
+.property-details p {
+    margin: 0;
+    font-size: 13px;
+    color: var(--text-color);
+}
+
+.session-details strong,
+.property-details strong {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.session-details span,
+.property-details span {
+    color: var(--text-light);
+}
+
+/* ============================================
+   ACTION BUTTONS
+   ============================================ */
+
+.action-btn {
+    padding: 10px 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.primary-btn {
+    background-color: var(--primary-color);
+    color: white;
+    margin-bottom: 8px;
+}
+
+.primary-btn:hover {
+    background-color: #1e3a8a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
+}
+
+.primary-btn:active {
+    transform: translateY(0);
+}
+
+.secondary-btn {
+    background-color: #e2e8f0;
+    color: var(--text-color);
+    margin-bottom: 8px;
+    font-size: 12px;
+}
+
+.secondary-btn:hover {
+    background-color: #cbd5e1;
+    transform: translateY(-2px);
+}
+
+.secondary-btn.recording {
+    background-color: var(--error-color);
+    color: white;
+}
+
+/* ============================================
+   CHAT BOX
+   ============================================ */
+
+.chat-box {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-height: 250px;
+}
+
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 10px;
+    max-height: 180px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.chat-message {
+    padding: 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.chat-message.user {
+    background-color: #dbeafe;
+    color: #1e40af;
+    margin-left: auto;
+    max-width: 90%;
+}
+
+.chat-message.agent {
+    background-color: #f1f5f9;
+    color: var(--text-color);
+    margin-right: auto;
+    max-width: 90%;
+}
+
+.chat-message strong {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.chat-message .timestamp {
+    display: block;
+    font-size: 10px;
+    opacity: 0.6;
+    margin-top: 4px;
+}
+
+.chat-input {
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 12px;
+    resize: none;
+    font-family: inherit;
+}
+
+.chat-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+}
+
+.send-btn {
+    padding: 8px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 12px;
+}
+
+.send-btn:hover {
+    background-color: #1e3a8a;
+    transform: translateY(-2px);
+}
+
+/* ============================================
+   PROPERTIES SECTION
+   ============================================ */
+
+.properties-section {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.properties-section h2 {
+    margin: 0 0 20px 0;
+    color: var(--primary-color);
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.properties-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.property-card {
+    background: white;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.property-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(30, 64, 175, 0.15);
+}
+
+.property-card.active {
+    border-color: var(--secondary-color);
+    background: linear-gradient(135deg, #fef3c7 0%, #fef9e7 100%);
+    box-shadow: 0 4px 16px rgba(249, 115, 22, 0.2);
+}
+
+.property-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.property-card-content {
+    padding: 15px;
+}
+
+.property-card-content h4 {
+    margin: 0 0 8px 0;
+    color: var(--primary-color);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.property-card-content .price {
+    margin: 0 0 8px 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+.property-card-content .details {
+    margin: 0 0 8px 0;
+    font-size: 12px;
+    color: var(--text-light);
+}
+
+.property-card-content .location {
+    margin: 0 0 12px 0;
+    font-size: 12px;
+    color: var(--text-color);
+}
+
+.view-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 13px;
+}
+
+.view-btn:hover {
+    background-color: #1e3a8a;
+    transform: translateY(-2px);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.webinar-footer {
+    background: var(--dark-bg);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+    border-top: 1px solid #334155;
+}
+
+.webinar-footer p {
+    margin: 8px 0;
+    font-size: 13px;
+}
+
+.webinar-footer a {
+    color: #60a5fa;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.webinar-footer a:hover {
+    text-decoration: underline;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 1024px) {
+    .webinar-content {
+        grid-template-columns: 1fr;
+    }
+
+    .webinar-info-panel {
+        border-left: none;
+        border-top: 1px solid var(--border-color);
+        max-height: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .webinar-header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .header-content h1 {
+        font-size: 22px;
+    }
+
+    .webinar-main {
+        padding: 15px;
+    }
+
+    .properties-gallery {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .webinar-info-panel {
+        max-height: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .webinar-header {
+        padding: 15px;
+    }
+
+    .header-content h1 {
+        font-size: 18px;
+    }
+
+    .webinar-main {
+        padding: 10px;
+        gap: 15px;
+    }
+
+    .properties-section {
+        padding: 15px;
+    }
+
+    .properties-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .action-btn {
+        padding: 8px;
+        font-size: 12px;
+    }
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.chat-message {
+    animation: fadeIn 0.3s ease;
+}
+
+.property-card {
+    animation: fadeIn 0.5s ease;
+}
