@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Property Webinar - EMPIRE Showroom</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="webinar-styles.css">
+</head>
+<body>
+    <div class="webinar-container">
+        <!-- Header -->
+        <header class="webinar-header">
+            <div class="header-content">
+                <h1>EMPIRE Showroom - Live Property Webinar</h1>
+                <p class="status" id="webinarStatus">Status: <span id="statusText">Loading...</span></p>
+            </div>
+            <a href="index.html" class="back-btn">← Back to Home</a>
+        </header>
+
+        <!-- Main Content -->
+        <main class="webinar-main">
+            <div class="webinar-content">
+                <!-- Zoom Video Container -->
+                <div class="zoom-container">
+                    <div id="zoomVideoContainer" class="zoom-video">
+                        <div class="placeholder">
+                            <h2>Zoom Meeting Embed</h2>
+                            <p>Meeting will load here</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Webinar Info Panel -->
+                <aside class="webinar-info-panel">
+                    <div class="info-section">
+                        <h3>📅 Current Session</h3>
+                        <div id="sessionInfo" class="session-details">
+                            <p><strong>Time:</strong> <span id="currentTime">--:--:--</span></p>
+                            <p><strong>Duration:</strong> <span id="sessionDuration">00:00</span></p>
+                            <p><strong>Participants:</strong> <span id="participantCount">0</span></p>
+                        </div>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>🏠 Featured Property</h3>
+                        <div id="propertyInfo" class="property-details">
+                            <p id="propertyName">Loading property details...</p>
+                            <p id="propertyPrice"></p>
+                            <p id="propertyLocation"></p>
+                        </div>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>📝 Quick Actions</h3>
+                        <button id="joinMeetingBtn" class="action-btn primary-btn">Join Meeting</button>
+                        <button id="scheduleBtn" class="action-btn secondary-btn">Schedule Session</button>
+                        <button id="recordBtn" class="action-btn secondary-btn">Enable Recording</button>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>💬 Chat</h3>
+                        <div id="chatBox" class="chat-box">
+                            <div id="chatMessages" class="chat-messages"></div>
+                            <input type="text" id="chatInput" placeholder="Type message..." class="chat-input">
+                            <button id="sendChatBtn" class="send-btn">Send</button>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+
+            <!-- Properties Gallery -->
+            <section class="properties-section">
+                <h2>Properties in Today's Showcase</h2>
+                <div id="propertiesGallery" class="properties-gallery">
+                    <!-- Properties will be loaded here -->
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="webinar-footer">
+            <p>&copy; 2026 EMPIRE Property Showroom. All rights reserved.</p>
+            <p>For support, contact: <a href="mailto:support@empireproperty.com">support@empireproperty.com</a></p>
+        </footer>
+    </div>
+
+    <!-- Zoom SDK Script -->
+    <script src="https://source.zoom.us/1.8.0/zm.js"></script>
+    <script src="webinar.js"></script>
+</body>
+</html>
