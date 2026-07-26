@@ -1,0 +1,166 @@
+/* Auth Styles */
+:root {
+    --primary-color: #0a0e27;
+    --accent-gold: #d4af37;
+    --accent-light: #ffd700;
+    --text-white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Trebuchet MS, sans-serif;
+    background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0a0e27 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 450px;
+}
+
+.auth-box {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(245, 245, 245, 0.96) 100%);
+    border-radius: 20px;
+    padding: 50px 40px;
+    box-shadow: 0 0 60px rgba(212, 175, 55, 0.3),
+                0 20px 80px rgba(0, 0, 0, 0.4);
+    border: 3px solid #d4af37;
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.auth-header h1 {
+    font-size: 32px;
+    color: #0a0e27;
+    margin-bottom: 10px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.auth-header p {
+    color: #666;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.auth-tab {
+    display: none;
+}
+
+.auth-tab.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.auth-tab h2 {
+    font-size: 24px;
+    color: #0a0e27;
+    margin-bottom: 25px;
+    font-weight: 800;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #0a0e27;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #d4af37;
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    color: #0a0e27;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #ffd700;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+}
+
+.btn-auth {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #d4af37 0%, #ffd700 50%, #d4af37 100%);
+    color: #0a0e27;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+.btn-auth:hover {
+    background: linear-gradient(135deg, #ffd700 0%, #ffed4e 50%, #ffd700 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 0 40px rgba(212, 175, 55, 0.5);
+}
+
+.auth-toggle {
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+    font-size: 14px;
+}
+
+.auth-toggle a {
+    color: #d4af37;
+    text-decoration: none;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.auth-toggle a:hover {
+    color: #ffd700;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+}
+
+@media (max-width: 600px) {
+    .auth-box {
+        padding: 30px 20px;
+    }
+    
+    .auth-header h1 {
+        font-size: 24px;
+    }
+}
