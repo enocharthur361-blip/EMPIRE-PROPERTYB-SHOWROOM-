@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mortgage Calculator - EMPIRE PROPERTY SHOWROOM</title>
+    <link rel="stylesheet" href="tools-styles.css">
+</head>
+<body>
+    <div class="tools-container">
+        <div class="calculator-card">
+            <h1>🏡 Mortgage Calculator</h1>
+            <p>Calculate your monthly mortgage payments instantly</p>
+            
+            <form id="mortgageForm" onsubmit="calculateAndDisplay(event)" class="calculator-form">
+                <div class="form-group">
+                    <label>Property Price (AED)</label>
+                    <input type="number" id="propertyPrice" placeholder="5000000" required min="0">
+                </div>
+                
+                <div class="form-group">
+                    <label>Down Payment (AED)</label>
+                    <input type="number" id="downPayment" placeholder="1000000" required min="0">
+                    <small>Typically 20-30% of property price</small>
+                </div>
+                
+                <div class="form-group">
+                    <label>Annual Interest Rate (%)</label>
+                    <input type="number" id="interestRate" placeholder="4.5" required min="0" step="0.1">
+                </div>
+                
+                <div class="form-group">
+                    <label>Loan Term (Years)</label>
+                    <input type="number" id="loanTerm" placeholder="25" required min="1" max="40">
+                </div>
+                
+                <button type="submit" class="btn-calculate">Calculate Mortgage</button>
+            </form>
+            
+            <div id="results" class="results-section" style="display: none;">
+                <h2>Your Mortgage Calculation</h2>
+                
+                <div class="result-grid">
+                    <div class="result-item">
+                        <span class="result-label">Loan Amount</span>
+                        <span class="result-value" id="loanAmount">AED 0</span>
+                    </div>
+                    
+                    <div class="result-item highlight">
+                        <span class="result-label">Monthly Payment</span>
+                        <span class="result-value" id="monthlyPayment">AED 0</span>
+                    </div>
+                    
+                    <div class="result-item">
+                        <span class="result-label">Total Payment</span>
+                        <span class="result-value" id="totalPayment">AED 0</span>
+                    </div>
+                    
+                    <div class="result-item">
+                        <span class="result-label">Total Interest Paid</span>
+                        <span class="result-value" id="totalInterest">AED 0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="tools.js"></script>
+</body>
+</html>
