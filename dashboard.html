@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - EMPIRE PROPERTY SHOWROOM</title>
+    <link rel="stylesheet" href="dashboard-styles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>🏢 EMPIRE</h2>
+                <p>Property Platform</p>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="#" onclick="switchSection('overview')" class="nav-link active" data-section="overview">
+                    <span class="icon">📊</span>
+                    <span>Overview</span>
+                </a>
+                <a href="#" onclick="switchSection('listings')" class="nav-link" data-section="listings">
+                    <span class="icon">🏠</span>
+                    <span>My Listings</span>
+                </a>
+                <a href="#" onclick="switchSection('create-listing')" class="nav-link" data-section="create-listing">
+                    <span class="icon">➕</span>
+                    <span>Create Listing</span>
+                </a>
+                <a href="#" onclick="switchSection('subscription')" class="nav-link" data-section="subscription">
+                    <span class="icon">💎</span>
+                    <span>Subscription</span>
+                </a>
+                <a href="#" onclick="switchSection('team')" class="nav-link" data-section="team">
+                    <span class="icon">👥</span>
+                    <span>Team Management</span>
+                </a>
+                <a href="#" onclick="switchSection('analytics')" class="nav-link" data-section="analytics">
+                    <span class="icon">📈</span>
+                    <span>Analytics</span>
+                </a>
+                <a href="#" onclick="logout()" class="nav-link logout">
+                    <span class="icon">🚪</span>
+                    <span>Logout</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="dashboard-header">
+                <div class="header-content">
+                    <h1 id="sectionTitle">Dashboard Overview</h1>
+                    <p id="sectionSubtitle">Welcome to your property management dashboard</p>
+                </div>
+                <div class="header-user">
+                    <div class="user-info">
+                        <p id="userName">User Name</p>
+                        <p id="userPlan" class="plan-badge">Free Plan</p>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Content Area -->
+            <div class="content-area">
+                <!-- Overview Section -->
+                <section id="overview" class="section active">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon">🏠</div>
+                            <div class="stat-content">
+                                <h3>Total Listings</h3>
+                                <p class="stat-number" id="totalListings">0</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">👁️</div>
+                            <div class="stat-content">
+                                <h3>Total Views</h3>
+                                <p class="stat-number" id="totalViews">0</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">💌</div>
+                            <div class="stat-content">
+                                <h3>Inquiries</h3>
+                                <p class="stat-number" id="totalInquiries">0</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">💎</div>
+                            <div class="stat-content">
+                                <h3>Subscription</h3>
+                                <p class="stat-text" id="subscriptionStatus">Free Plan</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="listings-preview">
+                        <h2>Recent Listings</h2>
+                        <div id="recentListings" class="listings-grid"></div>
+                    </div>
+                </section>
+
+                <!-- Listings Section -->
+                <section id="listings" class="section">
+                    <div class="section-header">
+                        <h2>My Property Listings</h2>
+                        <p>Manage all your property listings</p>
+                    </div>
+                    <div id="listingsContainer" class="listings-grid"></div>
+                </section>
+
+                <!-- Create Listing Section -->
+                <section id="create-listing" class="section">
+                    <div class="section-header">
+                        <h2>Create New Listing</h2>
+                        <p>Add a new property to your portfolio</p>
+                    </div>
+                    <form id="listingForm" onsubmit="handleCreateListing(event)" class="listing-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Property Title *</label>
+                                <input type="text" id="title" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Property Type *</label>
+                                <select id="type" required>
+                                    <option value="">Select Type</option>
+                                    <option value="apartment">Apartment</option>
+                                    <option value="villa">Villa</option>
+                                    <option value="townhouse">Townhouse</option>
+                                    <option value="studio">Studio</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Category *</label>
+                                <select id="category" required>
+                                    <option value="">Select Category</option>
+                                    <option value="buy">Buy</option>
+                                    <option value="rent">Rent</option>
+                                    <option value="offplan">Off-Plan</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Price *</label>
+                                <input type="number" id="price" placeholder="AED" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Location *</label>
+                                <input type="text" id="location" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Bedrooms</label>
+                                <input type="number" id="bedrooms">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Bathrooms</label>
+                                <input type="number" id="bathrooms">
+                            </div>
+                            <div class="form-group">
+                                <label>Square Feet</label>
+                                <input type="number" id="sqft">
+                            </div>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label>Description *</label>
+                            <textarea id="description" rows="5" required></textarea>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label>Upload Photos & Videos (Premium Feature)</label>
+                            <div class="upload-area" id="uploadArea">
+                                <p>Drag and drop files here or click to select</p>
+                                <input type="file" id="mediaFiles" multiple accept="image/*,video/*" onchange="handleFileUpload(event)">
+                            </div>
+                            <div id="mediaPreview" class="media-preview"></div>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label>Amenities</label>
+                            <div class="amenities-list">
+                                <label><input type="checkbox" value="pool"> Pool</label>
+                                <label><input type="checkbox" value="gym"> Gym</label>
+                                <label><input type="checkbox" value="parking"> Parking</label>
+                                <label><input type="checkbox" value="security"> Security</label>
+                                <label><input type="checkbox" value="balcony"> Balcony</label>
+                                <label><input type="checkbox" value="garden"> Garden</label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn-primary">Create Listing</button>
+                    </form>
+                </section>
+
+                <!-- Subscription Section -->
+                <section id="subscription" class="section">
+                    <div class="section-header">
+                        <h2>Subscription Plans</h2>
+                        <p>Upgrade your account for more features</p>
+                    </div>
+
+                    <div class="pricing-grid">
+                        <!-- Free Plan -->
+                        <div class="pricing-card free">
+                            <h3>FREE PLAN</h3>
+                            <div class="price">AED 0<span>/month</span></div>
+                            <ul class="features-list">
+                                <li>✓ 5 Listings per Month</li>
+                                <li>✓ Basic Property Details</li>
+                                <li>✗ No Photos/Videos</li>
+                                <li>✗ No Analytics</li>
+                                <li>✗ No Priority Support</li>
+                            </ul>
+                            <button class="btn-plan" onclick="changePlan('free')" disabled id="freeBtn">Current Plan</button>
+                        </div>
+
+                        <!-- Premium Plan -->
+                        <div class="pricing-card premium">
+                            <div class="badge">MOST POPULAR</div>
+                            <h3>PREMIUM PLAN</h3>
+                            <div class="price">AED 99<span>/month</span></div>
+                            <ul class="features-list">
+                                <li>✓ Unlimited Listings</li>
+                                <li>✓ Photos & Video Support</li>
+                                <li>✓ Property Analysis Tools</li>
+                                <li>✓ Priority Email Support</li>
+                                <li>✓ Advanced Analytics</li>
+                            </ul>
+                            <button class="btn-plan-premium" onclick="upgradeToPremium()">Upgrade Now</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Team Management Section -->
+                <section id="team" class="section">
+                    <div class="section-header">
+                        <h2>Team Management</h2>
+                        <p>Manage your agents and team members (Broker Only)</p>
+                    </div>
+                    <div id="teamSection"></div>
+                </section>
+
+                <!-- Analytics Section -->
+                <section id="analytics" class="section">
+                    <div class="section-header">
+                        <h2>Property Analytics</h2>
+                        <p>View insights and performance metrics (Premium Feature)</p>
+                    </div>
+                    <div id="analyticsContent"></div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

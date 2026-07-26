@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Tour - EMPIRE PROPERTY SHOWROOM</title>
+    <link rel="stylesheet" href="tools-styles.css">
+</head>
+<body>
+    <div class="virtual-tour-container">
+        <div class="tour-header">
+            <h1 id="tourTitle">Virtual Property Tour</h1>
+            <button onclick="goBack()" class="btn-back">← Back</button>
+        </div>
+        
+        <div class="tour-viewer">
+            <div class="media-container">
+                <img id="tourImage" src="" alt="Property" class="tour-media">
+                <video id="tourVideo" class="tour-media" controls style="display: none;">
+                    <source id="videoSource" src="" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            
+            <div class="tour-controls">
+                <button onclick="previousMedia()" class="btn-nav">Previous</button>
+                <span id="mediaCounter">1 of 1</span>
+                <button onclick="nextMedia()" class="btn-nav">Next</button>
+            </div>
+            
+            <div class="tour-info">
+                <h3 id="mediaTitle">Media Title</h3>
+                <p id="mediaDescription">Media Description</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="tools.js"></script>
+</body>
+</html>

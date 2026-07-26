@@ -1,0 +1,342 @@
+/* Tools Styling */
+:root {
+    --primary-color: #0a0e27;
+    --accent-gold: #d4af37;
+    --accent-light: #ffd700;
+    --text-white: #ffffff;
+    --success: #10b981;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Trebuchet MS, sans-serif;
+    background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0a0e27 100%);
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.tools-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.calculator-card,
+.comparison-card {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    border: 3px solid #d4af37;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    color: #0a0e27;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+> p {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.calculator-form {
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #0a0e27;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #d4af37;
+    border-radius: 10px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #ffd700;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+}
+
+.form-group small {
+    display: block;
+    margin-top: 5px;
+    color: #999;
+    font-size: 12px;
+}
+
+.btn-calculate,
+.btn-add,
+.btn-nav {
+    background: linear-gradient(135deg, #d4af37 0%, #ffd700 100%);
+    color: #0a0e27;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-calculate:hover,
+.btn-add:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+}
+
+.results-section {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(212, 175, 55, 0.1) 100%);
+    padding: 30px;
+    border-radius: 15px;
+    border: 2px solid var(--success);
+    margin-top: 30px;
+}
+
+.results-section h2 {
+    color: #0a0e27;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.result-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.result-item {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid #d4af37;
+    text-align: center;
+}
+
+.result-item.highlight {
+    background: linear-gradient(135deg, #d4af37 0%, #ffd700 100%);
+    color: #0a0e27;
+}
+
+.result-label {
+    display: block;
+    color: #666;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.result-item.highlight .result-label {
+    color: #0a0e27;
+}
+
+.result-value {
+    display: block;
+    font-size: 24px;
+    font-weight: 900;
+    color: #d4af37;
+}
+
+.result-item.highlight .result-value {
+    color: #0a0e27;
+}
+
+/* Comparison Table */
+.comparison-controls {
+    margin-bottom: 30px;
+    display: flex;
+    gap: 15px;
+}
+
+.property-selector {
+    flex: 1;
+    padding: 12px 15px;
+    border: 2px solid #d4af37;
+    border-radius: 10px;
+    font-family: inherit;
+    min-height: 100px;
+}
+
+.comparison-table {
+    overflow-x: auto;
+    margin-top: 30px;
+}
+
+.comparison-table table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.comparison-table thead tr {
+    background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+    color: white;
+}
+
+.comparison-table th,
+.comparison-table td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.comparison-table tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+.comparison-table td:first-child {
+    text-align: left;
+    font-weight: 700;
+    color: #0a0e27;
+}
+
+/* Virtual Tour */
+.virtual-tour-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    border: 3px solid #d4af37;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.tour-header {
+    background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+    color: white;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tour-header h1 {
+    color: #ffd700;
+    margin: 0;
+}
+
+.btn-back {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 10px 20px;
+    border: 2px solid white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.btn-back:hover {
+    background: white;
+    color: #0a0e27;
+}
+
+.tour-viewer {
+    padding: 30px;
+}
+
+.media-container {
+    width: 100%;
+    height: 500px;
+    background: #f5f5f5;
+    border-radius: 10px;
+    border: 2px solid #d4af37;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.tour-media {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tour-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 15px;
+}
+
+.btn-nav {
+    flex: 1;
+    padding: 12px;
+}
+
+#mediaCounter {
+    color: #0a0e27;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.tour-info {
+    background: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.tour-info h3 {
+    color: #0a0e27;
+    margin-bottom: 10px;
+}
+
+.tour-info p {
+    color: #666;
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .tools-container {
+        padding: 0;
+    }
+    
+    .calculator-card,
+    .comparison-card {
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 24px;
+    }
+    
+    .result-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .tour-header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .media-container {
+        height: 300px;
+    }
+}

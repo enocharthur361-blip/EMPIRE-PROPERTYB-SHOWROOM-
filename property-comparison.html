@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Comparison - EMPIRE PROPERTY SHOWROOM</title>
+    <link rel="stylesheet" href="tools-styles.css">
+</head>
+<body>
+    <div class="tools-container">
+        <div class="comparison-card">
+            <h1>📉 Property Comparison Tool</h1>
+            <p>Compare multiple properties side by side</p>
+            
+            <div class="comparison-controls">
+                <select id="propertySelect" multiple class="property-selector">
+                    <option value="">Select properties to compare (max 4)...</option>
+                </select>
+                <button onclick="addPropertiesToCompare()" class="btn-add">Compare Selected</button>
+            </div>
+            
+            <div id="comparisonTable" class="comparison-table" style="display: none;">
+                <table>
+                    <thead>
+                        <tr id="propertyHeaders"></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Price</strong></td>
+                            <td id="price-0"></td>
+                            <td id="price-1"></td>
+                            <td id="price-2"></td>
+                            <td id="price-3"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Bedrooms</strong></td>
+                            <td id="beds-0"></td>
+                            <td id="beds-1"></td>
+                            <td id="beds-2"></td>
+                            <td id="beds-3"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Bathrooms</strong></td>
+                            <td id="baths-0"></td>
+                            <td id="baths-1"></td>
+                            <td id="baths-2"></td>
+                            <td id="baths-3"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Size (Sq Ft)</strong></td>
+                            <td id="sqft-0"></td>
+                            <td id="sqft-1"></td>
+                            <td id="sqft-2"></td>
+                            <td id="sqft-3"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Location</strong></td>
+                            <td id="location-0"></td>
+                            <td id="location-1"></td>
+                            <td id="location-2"></td>
+                            <td id="location-3"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Price per Sq Ft</strong></td>
+                            <td id="pricePerSqft-0"></td>
+                            <td id="pricePerSqft-1"></td>
+                            <td id="pricePerSqft-2"></td>
+                            <td id="pricePerSqft-3"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <script src="tools.js"></script>
+</body>
+</html>
